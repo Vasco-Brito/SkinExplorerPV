@@ -1,0 +1,15 @@
+# *
+User-agent: *
+Allow: /_next/static/
+Allow: /_next/image
+Disallow: /_next/
+Disallow: /api/
+Disallow: /lol-game-data/
+Disallow: /opensearch
+Allow: /
+
+# Host
+Host: https://www.skinexplorer.lol
+
+# Sitemaps
+Sitemap: https://www.skinexplorer.lol/sitemap-2.xml
