@@ -20,9 +20,10 @@ import { prepareAdditions } from "../components/new-additions/helpers";
 function ChampionsList({ role }) {
   const { champions } = useProps();
   const filteredChamps = useMemo(() => {
-    if (!role) return champions;
+    if (!role) return champions.sort((a, b) => a.name.localeCompare(b.name));
 
-    return champions.filter((c) => c.roles.includes(role));
+    return champions.filter((c) => c.roles.includes(role))
+        .sort((a, b) => a.name.localeCompare(b.name));
   }, [champions, role]);
 
   return (

@@ -1,81 +1,45 @@
-/**
- * Run before building to precache all the data from the Redis cache.
- */
-
-import Redis from "ioredis";
 import fs from "fs/promises";
 import path from "path";
-
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
+import axios from "axios";
 
-const CHUNK_SIZE = 120000;
+const SERVER_URL = "http://localhost:3001";
+const CHECK_ENDPOINT = "shouldPrecache";
+const ENDPOINTS = ["skins", "champions", "persistentVars", "added", "skinlines", "universes"];
+const CACHE_DIR = resolve(dirname(fileURLToPath(import.meta.url)), ".cache");
 
-class Cache {
-  constructor() {
-    this.redis = new Redis(process.env.REDIS_URL);
-  }
-
-  async get(key, initial = null) {
-    let str = await this.redis.getrange(key, 0, CHUNK_SIZE - 1);
-    if (!str) {
-      return initial;
-    }
-
-    let data,
-      i = 1;
-    while (true) {
-      try {
-        data = JSON.parse(str);
-        break;
-      } catch (e) {
-        if (e instanceof SyntaxError) {
-          str +=
-            (await this.redis.getrange(
-              key,
-              CHUNK_SIZE * i,
-              CHUNK_SIZE * (i + 1) - 1
-            )) || "";
-          i++;
-        } else {
-          throw e;
-        }
-      }
-    }
-
-    return data;
-  }
-
-  destroy() {
-    this.redis.disconnect();
+async function shouldPrecache() {
+  try {
+    const response = await axios.get(`${SERVER_URL}/${CHECK_ENDPOINT}`);
+    return response.data === true;
+  } catch (error) {
+    console.error("[Precache] Error checking precache condition:", error.message);
+    return false;
   }
 }
 
-async function downloadKey(key, initial, cache, root) {
-  const data = await cache.get(key, initial ?? null);
-  await fs.writeFile(path.resolve(root, `${key}.json`), JSON.stringify(data));
-  console.log(`[Precache] Cached ${key}!`);
+async function downloadKey(key, root) {
+  try {
+    const response = await axios.get(`${SERVER_URL}/${key}`);
+    await fs.writeFile(path.resolve(root, `${key}.json`), JSON.stringify(response.data, null, 2));
+    console.log(`[Precache] Cached ${key}!`);
+  } catch (error) {
+    console.error(`[Precache] Error caching ${key}:`, error.message);
+  }
 }
 
 async function main() {
-  const cache = new Cache();
-  const root = resolve(dirname(fileURLToPath(import.meta.url)), ".cache");
+  const canPrecache = await shouldPrecache();
+  if (!canPrecache) {
+    console.log("[Precache] Skipping caching process (shouldPrecache returned false).");
+    return;
+  }
 
-  await fs.mkdir(root, {
-    recursive: true,
-  });
-  await Promise.all(
-    [
-      "added",
-      "champions",
-      "changes",
-      "persistentVars",
-      "skinlines",
-      "skins",
-      "universes",
-    ].map((k) => downloadKey(k, null, cache, root))
-  );
-  cache.destroy();
+  console.log("[Precache] Starting caching process...");
+  await fs.mkdir(CACHE_DIR, { recursive: true });
+  await Promise.all(ENDPOINTS.map((key) => downloadKey(key, CACHE_DIR)));
+  console.log("[Precache] All data cached successfully!");
 }
 
 main();

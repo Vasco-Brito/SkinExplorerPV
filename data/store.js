@@ -5,13 +5,9 @@ import { splitId } from "./helpers";
 const FUSE_OPTIONS = { keys: ["name", "searchString"], threshold: 0.3 };
 const NON_ALPHANUMERIC_REGEX = /[^A-Za-z0-9]/g;
 
-/**
- * Handle the logic behind cache invalidation and triggering all the datasets
- * to fetch new copies.
- */
 export class Store {
   patch = new Patch();
-  changes = require("./.cache/changes.json");
+  changes = require("./.cache/added.json");
 
   constructor() {
     const { champions, skinlines, universes, skins } = this.patch;
@@ -58,7 +54,6 @@ export class Store {
       FUSE_OPTIONS
     );
   }
-
   fuse = new Fuse([], FUSE_OPTIONS);
 }
 

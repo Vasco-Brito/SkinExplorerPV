@@ -2,7 +2,7 @@ import { useProps } from "../../data/contexts";
 import Link from "next/link";
 import Image from "../image";
 import styles from "./style.module.scss";
-import { asset } from "../../data/helpers";
+import {asset, skinlineSkins} from "../../data/helpers";
 
 export default function NewAdditions() {
   const { added } = useProps();
@@ -11,7 +11,7 @@ export default function NewAdditions() {
     return null;
   }
 
-  const linkTo = (skin) => `/champions/${skin.$$key}/skins/${skin.id}`;
+  const linkTo = (skin) => `/champions/${skin.champName}/skins/${skin.id}`;
 
   return (
     <div className={styles.container}>
