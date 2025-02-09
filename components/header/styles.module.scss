@@ -193,3 +193,84 @@
     }
   }
 }
+
+
+
+/* Estilos isolados para o login */
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 280px;
+  padding: 20px;
+  max-width: 320px;
+  background: rgba(22, 33, 48, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.loginContainer input.loginInput {
+  color: white;
+  background: rgba(121, 163, 207, 0.15);
+  border: 1px solid rgba(121, 163, 207, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  outline: none;
+  font-size: 17px;
+  height: 50px;
+  padding: 14px;
+  transition: background 200ms, border-color 200ms;
+
+  &::placeholder {
+    color: rgba(121, 163, 207, 0.6);
+  }
+
+  &:focus {
+    background: rgb(22, 33, 48);
+    border-color: rgba(121, 163, 207, 0.6);
+  }
+}
+
+.loginContainer button.loginBtn {
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, rgba(72, 89, 111, 0.9), rgba(121, 163, 207, 0.9));
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 200ms, transform 100ms;
+  font-size: 17px;
+  height: 50px;
+  padding: 14px;
+  margin-top: 12px;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(72, 89, 111, 1), rgba(121, 163, 207, 1));
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+
+/* Ajuste para aumentar os inputs do login dentro do menu */
+.menuIcon ul .loginContainer {
+  width: 260px;
+  padding: 16px;
+}
+
+.menuIcon ul .loginContainer input.loginInput {
+  font-size: 16px;
+  height: 46px;
+  padding: 12px;
+}
+
+.menuIcon ul .loginContainer button.loginBtn {
+  font-size: 16px;
+  height: 46px;
+  padding: 12px;
+  margin-top: 10px;
+}

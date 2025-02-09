@@ -12,7 +12,7 @@ export function comparePatches(a, b) {
   return 0;
 }
 
-export class Patch { //TODO: Fazer isto
+export class Patch {
   fullVersionString = require("./.cache/persistentVars.json").gameVersion;
 
   champions = require("./.cache/champions.json");

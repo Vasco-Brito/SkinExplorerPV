@@ -15,10 +15,35 @@ export const Header = ({ flat, backTo }) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const omnisearch = useRef();
   (typeof window === "undefined" ? useEffect : useLayoutEffect)(() => {
     if (showSearch) omnisearch.current?.focus();
   }, [showSearch]);
+
+  const handleLogin = () => {
+    if (username && password) {
+      console.log(username, password);
+      localStorage.setItem("user", username);
+      setIsLoggedIn(true);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    setUsername("");
+    setPassword("");
+  };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   return (
     <>
@@ -40,7 +65,7 @@ export const Header = ({ flat, backTo }) => {
             />
           </a>
         </Link>
-        <div className={styles.omnisearch}>
+        <div className={styles.loginInput}>
           <Omnisearch ref={omnisearch} />
         </div>
         <div
@@ -52,69 +77,115 @@ export const Header = ({ flat, backTo }) => {
           {showSearch ? <X /> : <Search />}
         </div>
         <div
-          className={classNames(styles.menuIcon, { [styles.open]: menuOpen })}
-          onClick={() => setMenuOpen(!menuOpen)}
+            className={classNames(styles.menuIcon, {[styles.open]: menuOpen})}
+            onClick={() => setMenuOpen(!menuOpen)}
         >
-          <Menu />
-          <ul>
+          <Menu/>
+          <ul className={styles.loginContainer}>
             <li>
               <Link href="/shortcuts">
                 <a>Keybinds &amp; Gestures</a>
               </Link>
             </li>
-            <li className={styles.divider} />
+            <li className={styles.divider}/>
+            {!isLoggedIn ? (
+                <>
+                  <li>
+                    <input
+                        className={styles.loginInput}
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                  </li>
+                  <li>
+                    <input
+                        className={styles.loginInput}
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </li>
+                  <li>
+                    <button onClick={handleLogin} className={styles.loginBtn}>
+                      Login
+                    </button>
+                  </li>
+                </>
+            ) : (
+                <>
+                  <li className={styles.loggedUser}>
+                    <a>Bem-vindo, <strong>{localStorage.getItem("user")}</strong>!</a>
+                  </li>
+                  <li>
+                    <button onClick={handleLogout} className={styles.loginBtn}>
+                      Logout
+                    </button>
+                  </li>
+                </>
+            )}
+            <li className={styles.divider}/>
             <li>
-              <Link href="/changelog" as="/changelog">
-                <a>Changelog</a>
+              <Link href="/shortcuts">
+                <a>Keybinds &amp; Gestures</a>
               </Link>
-            </li>
-            {/* <li>
-              <Link href="/about" as="/about">
-                <a>About</a>
-              </Link>
-            </li> */}
-            {/* <li>
-              <Link href="/sponsor" as="/sponsor">
-                <a>Sponsor</a>
-              </Link>
-            </li> */}
-            <li className={styles.divider} />
-            {/* <li>
-              <a href="https://discord.gg" target="_blank" rel="noreferrer">
-                Discord <ExternalLink />
-              </a>
-            </li> */}
-            <li>
-              <a
-                href="https://analytics.skinexplorer.lol/share/JlbPP3v4/Skin%20Explorer"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Analytics <ExternalLink />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/preyneyv/lol-skin-explorer/issues/new/choose"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Bug Report <ExternalLink />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/preyneyv/lol-skin-explorer/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on GitHub <ExternalLink />
-              </a>
             </li>
           </ul>
+
+          {/*<li>*/}
+          {/*  <Link href="/changelog" as="/changelog">*/}
+          {/*    <a>Changelog</a>*/}
+          {/*  </Link>*/}
+          {/*</li>*/}
+          {/*/!* <li>*/}
+          {/*  <Link href="/about" as="/about">*/}
+          {/*    <a>About</a>*/}
+          {/*  </Link>*/}
+          {/*</li> *!/*/}
+          {/*/!* <li>*/}
+          {/*  <Link href="/sponsor" as="/sponsor">*/}
+          {/*    <a>Sponsor</a>*/}
+          {/*  </Link>*/}
+          {/*</li> *!/*/}
+          {/*<li className={styles.divider} />*/}
+          {/*/!* <li>*/}
+          {/*  <a href="https://discord.gg" target="_blank" rel="noreferrer">*/}
+          {/*    Discord <ExternalLink />*/}
+          {/*  </a>*/}
+          {/*</li> *!/*/}
+          {/*<li>*/}
+          {/*  <a*/}
+          {/*    href="https://analytics.skinexplorer.lol/share/JlbPP3v4/Skin%20Explorer"*/}
+          {/*    target="_blank"*/}
+          {/*    rel="noreferrer"*/}
+          {/*  >*/}
+          {/*    Analytics <ExternalLink />*/}
+          {/*  </a>*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*  <a*/}
+          {/*    href="https://github.com/preyneyv/lol-skin-explorer/issues/new/choose"*/}
+          {/*    target="_blank"*/}
+          {/*    rel="noreferrer"*/}
+          {/*  >*/}
+          {/*    Bug Report <ExternalLink />*/}
+          {/*  </a>*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*  <a*/}
+          {/*    href="https://github.com/preyneyv/lol-skin-explorer/"*/}
+          {/*    target="_blank"*/}
+          {/*    rel="noreferrer"*/}
+          {/*  >*/}
+          {/*    View on GitHub <ExternalLink />*/}
+          {/*  </a>*/}
+          {/*</li>*/}
         </div>
       </header>
-      <div className={styles.headerSpacer} />
+      <div className={styles.headerSpacer}/>
     </>
-  );
+  )
+      ;
 };

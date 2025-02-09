@@ -68,8 +68,8 @@ export function useSkinlineSkins(id) {
 }
 
 export const rarities = { //TODO: Adicionar as imagens aos ranks
-  kTranscendent: ["ultimate.png", "Transcendent"],
-  kExalted: ["ultimate.png", "Exalted"],
+  kTranscendent: ["transcendent.png", "Transcendent"],
+  kExalted: ["exalted.png", "Exalted"],
   kUltimate: ["ultimate.png", "Ultimate"],
   kMythic: ["mythic.png", "Mythic"],
   kLegendary: ["legendary.png", "Legendary"],
@@ -88,6 +88,7 @@ export const classes = {
 export function rarity(skin) {
   if (!rarities[skin.rarity]) return null;
   const [imgName, name] = rarities[skin.rarity];
+  console.log(imgName)
   const imgUrl = `${dataRoot()}/v1/rarity-gem-icons/${imgName}`;
   return [imgUrl, name];
 }
