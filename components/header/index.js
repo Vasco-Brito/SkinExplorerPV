@@ -19,27 +19,46 @@ export const Header = ({ flat, backTo }) => {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const omnisearch = useRef();
+  let storedUser = {};
   (typeof window === "undefined" ? useEffect : useLayoutEffect)(() => {
     if (showSearch) omnisearch.current?.focus();
   }, [showSearch]);
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (username && password) {
-      console.log(username, password);
-      localStorage.setItem("user", username);
-      setIsLoggedIn(true);
+
+      try {
+        const response = await fetch("http://localhost:3001/accounts/login", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ user: username, pdw: password }),
+        })
+
+        if (!response.ok) {
+          console.log("Erro ao logar")
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        localStorage.setItem("account", JSON.stringify(data));
+        setIsLoggedIn(true);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("account");
     setIsLoggedIn(false);
     setUsername("");
     setPassword("");
   };
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+    storedUser = JSON.parse(localStorage.getItem("account") || {});
+    console.log(storedUser.account.user);
     if (storedUser) {
       setIsLoggedIn(true);
     }
@@ -117,7 +136,7 @@ export const Header = ({ flat, backTo }) => {
             ) : (
                 <>
                   <li className={styles.loggedUser}>
-                    <a>Bem-vindo, <strong>{localStorage.getItem("user")}</strong>!</a>
+                    <a>Bem-vindo, <strong>{storedUser.account?.user}</strong>!</a>
                   </li>
                   <li>
                     <button onClick={handleLogout} className={styles.loginBtn}>
@@ -133,55 +152,6 @@ export const Header = ({ flat, backTo }) => {
               </Link>
             </li>
           </ul>
-
-          {/*<li>*/}
-          {/*  <Link href="/changelog" as="/changelog">*/}
-          {/*    <a>Changelog</a>*/}
-          {/*  </Link>*/}
-          {/*</li>*/}
-          {/*/!* <li>*/}
-          {/*  <Link href="/about" as="/about">*/}
-          {/*    <a>About</a>*/}
-          {/*  </Link>*/}
-          {/*</li> *!/*/}
-          {/*/!* <li>*/}
-          {/*  <Link href="/sponsor" as="/sponsor">*/}
-          {/*    <a>Sponsor</a>*/}
-          {/*  </Link>*/}
-          {/*</li> *!/*/}
-          {/*<li className={styles.divider} />*/}
-          {/*/!* <li>*/}
-          {/*  <a href="https://discord.gg" target="_blank" rel="noreferrer">*/}
-          {/*    Discord <ExternalLink />*/}
-          {/*  </a>*/}
-          {/*</li> *!/*/}
-          {/*<li>*/}
-          {/*  <a*/}
-          {/*    href="https://analytics.skinexplorer.lol/share/JlbPP3v4/Skin%20Explorer"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noreferrer"*/}
-          {/*  >*/}
-          {/*    Analytics <ExternalLink />*/}
-          {/*  </a>*/}
-          {/*</li>*/}
-          {/*<li>*/}
-          {/*  <a*/}
-          {/*    href="https://github.com/preyneyv/lol-skin-explorer/issues/new/choose"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noreferrer"*/}
-          {/*  >*/}
-          {/*    Bug Report <ExternalLink />*/}
-          {/*  </a>*/}
-          {/*</li>*/}
-          {/*<li>*/}
-          {/*  <a*/}
-          {/*    href="https://github.com/preyneyv/lol-skin-explorer/"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noreferrer"*/}
-          {/*  >*/}
-          {/*    View on GitHub <ExternalLink />*/}
-          {/*  </a>*/}
-          {/*</li>*/}
         </div>
       </header>
       <div className={styles.headerSpacer}/>
