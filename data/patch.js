@@ -15,7 +15,7 @@ export function comparePatches(a, b) {
 export class Patch {
   fullVersionString = require("./.cache/persistentVars.json").gameVersion;
 
-  champions = require("./.cache/champions.json");
+  champions = require(".cache/champions_old.json");
   skinlines = require("./.cache/skinlines.json");
   skins = require("./.cache/skins.json");
   universes = require("./.cache/universes.json");

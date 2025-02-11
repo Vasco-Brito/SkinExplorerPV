@@ -77,13 +77,37 @@ app.get("/persistentVars", async (req, res) => {
 
 app.get("/skins", async (req, res) => {
     try {
-        const response = await axios.get("https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/skins.json");
-        res.status(statusCode.OK).json(response.data);
+        const skinsResponse = await axios.get("https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/skins.json");
+        const skins = skinsResponse.data; // Mantém a estrutura original (objeto)
+
+        const pricesResponse = await axios.get("https://api.store.leagueoflegends.co.kr/catalog/KR/v1/items?language=en_US&inventorytype=CHAMPION_SKIN");
+        const pricesData = pricesResponse.data;
+
+        const pricesMap = {};
+        pricesData.forEach(item => {
+            if (item.inventoryType === "CHAMPION_SKIN" && (!item.subInventoryType || item.subInventoryType !== "RECOLOR")) {
+                const priceEntry = item.prices.reduce((acc, price) => {
+                    if (price.currency === "RP") acc.RP = price.cost;
+                    return acc;
+                }, { RP: 0 });
+
+                pricesMap[item.itemId] = priceEntry;
+            }
+        });
+        for (const skinId in skins) {
+            if (skins.hasOwnProperty(skinId)) {
+                skins[skinId].prices = pricesMap[skins[skinId].id] || { RP: 0 };
+            }
+        }
+
+        res.status(statusCode.OK).json(skins);
     } catch (error) {
         console.error("Error getting Skins: ", error.message);
         res.status(statusCode.ERROR).send("Error getting Skins");
     }
-})
+});
+
+
 
 app.get("/added", async (req, res) => {
     try {
@@ -109,18 +133,40 @@ app.get("/added", async (req, res) => {
 
 app.get("/champions", async (req, res) => {
     try {
-        const response = await axios.get("https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json");
-        const champions = response.data?.filter(champ => champ.id !== -1)
-            .map(({ alias, ...champions }) => ({
+        const championsResponse = await axios.get("https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json");
+        const champions = championsResponse.data?.filter(champ => champ.id !== -1)
+            .map(({ alias, id, ...champions }) => ({
                 ...champions,
-                key: alias.toLowerCase()
-            }))
-        res.status(statusCode.OK).json(champions);
+                key: alias.toLowerCase(),
+                id: id
+            }));
+
+        const pricesResponse = await axios.get("https://api.store.leagueoflegends.co.kr/catalog/KR/v1/items?language=en_US&inventorytype=CHAMPION");
+        const pricesData = pricesResponse.data;
+
+        const pricesMap = {};
+        pricesData.forEach(item => {
+            const priceEntry = item.prices.reduce((acc, price) => {
+                if (price.currency === "IP") acc.BE = price.cost;
+                if (price.currency === "RP") acc.RP = price.cost;
+                return acc;
+            }, { BE: 0, RP: 0 });
+
+            pricesMap[item.itemId] = priceEntry;
+        });
+
+        const championsWithPrices = champions.map(champ => ({
+            ...champ,
+            prices: pricesMap[champ.id] || { BE: 0, RP: 0 } // Caso não encontre, retorna 0
+        }));
+
+        res.status(statusCode.OK).json(championsWithPrices);
     } catch (error) {
         console.error("Error getting Champions: ", error.message);
         res.status(statusCode.ERROR).send("Error getting Champions");
     }
-})
+});
+
 
 app.get("/skinlines", async (req, res) => {
     try {
@@ -224,19 +270,13 @@ app.post("/accounts/games", async (req, res) => {
         if (!summonerId) {
             return res.status(statusCode.BAD_REQUEST).json({ error: "Summoner ID not found in account" });
         }
-
         let allGames = accountData.games?.matches || [];
         let existingGameIds = new Set(allGames.map(game => game.id));
-
         let url = `https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/${summonerId}?&limit=20&hl=en_US`;
         let keepFetching = true;
-
-        // 🔥 Atualizando `games` corretamente
         let gameTypeCount = accountData.games?.game_modes || {};
         let totalWins = accountData.games?.total_wins || 0;
         let totalLosses = accountData.games?.total_losses || 0;
-
-        // 🔥 Criando uma chave separada `champions`
         const champions = accountData.champions || {};
 
         while (keepFetching) {
@@ -255,13 +295,10 @@ app.post("/accounts/games", async (req, res) => {
                     const championId = game.myData.champion_id;
                     const gameType = game.game_type?.trim() || "Unknown";
 
-                    // 🔥 Atualizando `games.game_modes`
                     if (!gameTypeCount[gameType]) {
                         gameTypeCount[gameType] = 0;
                     }
                     gameTypeCount[gameType] += 1;
-
-                    // 🔥 Atualizando `champions` separadamente
                     if (!champions[championId]) {
                         champions[championId] = {
                             name: game.myData.champion_name,
@@ -307,9 +344,7 @@ app.post("/accounts/games", async (req, res) => {
                         }
                     };
                 });
-
             allGames = [...allGames, ...processedGames];
-
             const lastGameDate = new Date(gamesData.meta.last_game_created_at);
             if (lastGameDate < TARGET_DATE) {
                 keepFetching = false;
@@ -317,10 +352,7 @@ app.post("/accounts/games", async (req, res) => {
                 url = `https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/${summonerId}?&ended_at=${encodeURIComponent(gamesData.meta.last_game_created_at)}&limit=20&hl=en_US`;
             }
         }
-
         allGames.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-
-        // 🔥 Atualizando a estrutura do JSON corretamente
         accountData.games = {
             total_games: allGames.length,
             total_wins: totalWins,
@@ -328,11 +360,8 @@ app.post("/accounts/games", async (req, res) => {
             game_modes: gameTypeCount,
             matches: allGames
         };
-
-        accountData.champions = champions; // 🔥 Criando chave separada para campeões
-
+        accountData.champions = champions;
         fs.writeFileSync(filePath, JSON.stringify(accountData, null, 2));
-
         res.status(statusCode.OK).json({
             message: "Games retrieved and account updated successfully",
             total_games: allGames.length,

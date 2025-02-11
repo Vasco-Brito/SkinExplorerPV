@@ -170,7 +170,7 @@
 
 .mainContainer {
   display: flex;
-  flex-direction: column; // Empilha os elementos verticalmente
+  flex-direction: column;
   width: 100%;
 
   .topSection {
@@ -190,7 +190,7 @@
 
 .infoSection {
   flex: 1;
-  max-width: 55%; // Reduz um pouco para dar mais espaço à tabela
+  max-width: 55%;
 
   @media screen and (max-width: 850px) {
     max-width: 100%;
@@ -206,9 +206,10 @@
     text-align: left;
 
     display: flex;
-    justify-content: center; // Centraliza a tabela dentro da div
-    margin: 0 auto; // Centraliza a div no espaço disponível
+    justify-content: center;
+    margin: 0 auto;
     margin-left: 0px;
+    margin-top: 32px;
     padding-left: 15px;
 
   table {
