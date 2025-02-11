@@ -224,9 +224,20 @@ app.post("/accounts/games", async (req, res) => {
         if (!summonerId) {
             return res.status(statusCode.BAD_REQUEST).json({ error: "Summoner ID not found in account" });
         }
-        let allGames = [];
+
+        let allGames = accountData.games?.matches || [];
+        let existingGameIds = new Set(allGames.map(game => game.id));
+
         let url = `https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/${summonerId}?&limit=20&hl=en_US`;
         let keepFetching = true;
+
+        // 🔥 Atualizando `games` corretamente
+        let gameTypeCount = accountData.games?.game_modes || {};
+        let totalWins = accountData.games?.total_wins || 0;
+        let totalLosses = accountData.games?.total_losses || 0;
+
+        // 🔥 Criando uma chave separada `champions`
+        const champions = accountData.champions || {};
 
         while (keepFetching) {
             const response = await axios.get(url);
@@ -234,34 +245,71 @@ app.post("/accounts/games", async (req, res) => {
             if (!gamesData || !gamesData.data || gamesData.data.length === 0) {
                 break;
             }
+
             const processedGames = gamesData.data
-                .filter(game => new Date(game.created_at) >= TARGET_DATE) // ✅ Remove jogos antes da data limite
-                .map(game => ({
-                    id: game.id,
-                    created_at: game.created_at,
-                    patch: game.meta_version,
-                    game_map: game.game_map,
-                    game_type: game.game_type,
-                    game_length_second: game.game_length_second,
-                    is_remake: game.is_remake,
-                    result: game.myData.stats.result,
-                    champion_id: game.myData.champion_id,
-                    stats: {
-                        kill: game.myData.stats.kill,
-                        death: game.myData.stats.death,
-                        assist: game.myData.stats.assist,
-                        gold_earned: game.myData.stats.gold_earned,
-                        total_damage_dealt_to_champions: game.myData.stats.total_damage_dealt_to_champions,
-                        total_damage_taken: game.myData.stats.total_damage_taken,
-                        vision_score: game.myData.stats.vision_score,
-                        minion_kill: game.myData.stats.minion_kill,
-                        turret_kill: game.myData.stats.turret_kill,
-                        barrack_kill: game.myData.stats.barrack_kill,
-                        team: game.myData.team_key,
-                        position: game.myData.position,
+                .filter(game => new Date(game.created_at) >= TARGET_DATE)
+                .filter(game => !existingGameIds.has(game.id))
+                .map(game => {
+                    existingGameIds.add(game.id);
+                    const result = game.myData.stats.result === "WIN" ? 1 : 0;
+                    const championId = game.myData.champion_id;
+                    const gameType = game.game_type?.trim() || "Unknown";
+
+                    // 🔥 Atualizando `games.game_modes`
+                    if (!gameTypeCount[gameType]) {
+                        gameTypeCount[gameType] = 0;
                     }
-                }));
-            allGames = allGames.concat(processedGames);
+                    gameTypeCount[gameType] += 1;
+
+                    // 🔥 Atualizando `champions` separadamente
+                    if (!champions[championId]) {
+                        champions[championId] = {
+                            name: game.myData.champion_name,
+                            wins: 0,
+                            losses: 0,
+                            total_games: 0,
+                            owned: null,
+                            skins: []
+                        };
+                    }
+                    champions[championId].total_games += 1;
+                    if (result === 1) {
+                        champions[championId].wins += 1;
+                        totalWins += 1;
+                    } else {
+                        champions[championId].losses += 1;
+                        totalLosses += 1;
+                    }
+
+                    return {
+                        id: game.id,
+                        created_at: game.created_at,
+                        patch: game.meta_version,
+                        game_map: game.game_map,
+                        game_type: gameType,
+                        game_length_second: game.game_length_second,
+                        is_remake: game.is_remake,
+                        result,
+                        champion_id: championId,
+                        stats: {
+                            kill: game.myData.stats.kill,
+                            death: game.myData.stats.death,
+                            assist: game.myData.stats.assist,
+                            gold_earned: game.myData.stats.gold_earned,
+                            total_damage_dealt_to_champions: game.myData.stats.total_damage_dealt_to_champions,
+                            total_damage_taken: game.myData.stats.total_damage_taken,
+                            vision_score: game.myData.stats.vision_score,
+                            minion_kill: game.myData.stats.minion_kill,
+                            turret_kill: game.myData.stats.turret_kill,
+                            barrack_kill: game.myData.stats.barrack_kill,
+                            team: game.myData.team_key,
+                            position: game.myData.position,
+                        }
+                    };
+                });
+
+            allGames = [...allGames, ...processedGames];
+
             const lastGameDate = new Date(gamesData.meta.last_game_created_at);
             if (lastGameDate < TARGET_DATE) {
                 keepFetching = false;
@@ -269,17 +317,29 @@ app.post("/accounts/games", async (req, res) => {
                 url = `https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/${summonerId}?&ended_at=${encodeURIComponent(gamesData.meta.last_game_created_at)}&limit=20&hl=en_US`;
             }
         }
-        const gameTypeCount = {};
-        allGames.forEach(game => {
-            const gameType = game.game_type || "Unknown";
-            gameTypeCount[gameType] = (gameTypeCount[gameType] || 0) + 1;
-        });
-        res.status(statusCode.OK).json({
-            message: "Games retrieved successfully",
+
+        allGames.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+        // 🔥 Atualizando a estrutura do JSON corretamente
+        accountData.games = {
             total_games: allGames.length,
-            games_by_type: gameTypeCount,
-            games: allGames
+            total_wins: totalWins,
+            total_losses: totalLosses,
+            game_modes: gameTypeCount,
+            matches: allGames
+        };
+
+        accountData.champions = champions; // 🔥 Criando chave separada para campeões
+
+        fs.writeFileSync(filePath, JSON.stringify(accountData, null, 2));
+
+        res.status(statusCode.OK).json({
+            message: "Games retrieved and account updated successfully",
+            total_games: allGames.length,
+            games: accountData.games,
+            champions: accountData.champions
         });
+
     } catch (error) {
         console.error("Error fetching games:", error.message);
         res.status(statusCode.ERROR).json({ error: "Error fetching games" });
@@ -289,6 +349,7 @@ app.post("/accounts/games", async (req, res) => {
 
 //https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/AqZXktTGP7RwusD7PH_JBgfYLVH-eCdKBwNtsiKcKv77MYs5fBsQescvvA?&limit=20&hl=en_US //1o request
 //https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/AqZXktTGP7RwusD7PH_JBgfYLVH-eCdKBwNtsiKcKv77MYs5fBsQescvvA?&ended_at=2025-02-06T01%3A01%3A24%2B09%3A00&limit=20&hl=en_US //ignorar por agora
+//https://lol-web-api.op.gg/api/v1.0/internal/bypass/summoners/euw/AqZXktTGP7RwusD7PH_JBgfYLVH-eCdKBwNtsiKcKv77MYs5fBsQescvvA/renewal-status
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
