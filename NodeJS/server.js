@@ -78,34 +78,52 @@ app.get("/persistentVars", async (req, res) => {
 app.get("/skins", async (req, res) => {
     try {
         const skinsResponse = await axios.get("https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/skins.json");
-        const skins = skinsResponse.data; // Mantém a estrutura original (objeto)
-
+        const skins = skinsResponse.data;
         const pricesResponse = await axios.get("https://api.store.leagueoflegends.co.kr/catalog/KR/v1/items?language=en_US&inventorytype=CHAMPION_SKIN");
         const pricesData = pricesResponse.data;
-
         const pricesMap = {};
+        const chromaPricesMap = {};
         pricesData.forEach(item => {
+            const priceEntry = item.prices.reduce((acc, price) => {
+                if (price.currency === "RP") acc.RP = price.cost;
+                return acc;
+            }, { RP: 0 });
             if (item.inventoryType === "CHAMPION_SKIN" && (!item.subInventoryType || item.subInventoryType !== "RECOLOR")) {
-                const priceEntry = item.prices.reduce((acc, price) => {
-                    if (price.currency === "RP") acc.RP = price.cost;
-                    return acc;
-                }, { RP: 0 });
-
                 pricesMap[item.itemId] = priceEntry;
+            }
+            if (item.subInventoryType === "RECOLOR") {
+                chromaPricesMap[item.itemId] = priceEntry;
             }
         });
         for (const skinId in skins) {
             if (skins.hasOwnProperty(skinId)) {
-                skins[skinId].prices = pricesMap[skins[skinId].id] || { RP: 0 };
+                const skin = skins[skinId];
+                skin.prices = pricesMap[skin.id] || { RP: 0 };
+                if (skin.chromas && Array.isArray(skin.chromas)) {
+                    let totalChromaPrice = 0;
+                    skin.chromas = skin.chromas.map(chroma => {
+                        const chromaPrice = chromaPricesMap[chroma.id] || { RP: 0 };
+                        totalChromaPrice += chromaPrice.RP;
+                        return {
+                            ...chroma,
+                            prices: chromaPrice
+                        };
+                    });
+                    skin.chromaCount = skin.chromas.length;
+                    skin.chromaTotalPrice = totalChromaPrice;
+                } else {
+                    skin.chromaCount = 0;
+                    skin.chromaTotalPrice = 0;
+                }
             }
         }
-
         res.status(statusCode.OK).json(skins);
     } catch (error) {
         console.error("Error getting Skins: ", error.message);
         res.status(statusCode.ERROR).send("Error getting Skins");
     }
 });
+
 
 
 
@@ -295,20 +313,26 @@ app.post("/accounts/games", async (req, res) => {
                     const championId = game.myData.champion_id;
                     const gameType = game.game_type?.trim() || "Unknown";
 
+                    // Atualizar contagem de modos de jogo
                     if (!gameTypeCount[gameType]) {
                         gameTypeCount[gameType] = 0;
                     }
                     gameTypeCount[gameType] += 1;
+
+                    // Inicializar campeão se não existir
                     if (!champions[championId]) {
                         champions[championId] = {
                             name: game.myData.champion_name,
                             wins: 0,
                             losses: 0,
                             total_games: 0,
-                            owned: null,
-                            skins: []
+                            owned: false,
+                            skins: [],
+                            games: {} // Inicializa a chave "games"
                         };
                     }
+
+                    // Atualizar estatísticas gerais do campeão
                     champions[championId].total_games += 1;
                     if (result === 1) {
                         champions[championId].wins += 1;
@@ -317,6 +341,48 @@ app.post("/accounts/games", async (req, res) => {
                         champions[championId].losses += 1;
                         totalLosses += 1;
                     }
+
+                    // Inicializar a estrutura do modo de jogo dentro de "games"
+                    if (!champions[championId].games[gameType]) {
+                        champions[championId].games[gameType] = {
+                            total_games: 0,
+                            total_wins: 0,
+                            total_losses: 0,
+                            stats: {
+                                kill: 0,
+                                death: 0,
+                                assist: 0,
+                                gold_earned: 0,
+                                total_damage_dealt_to_champions: 0,
+                                total_damage_taken: 0,
+                                vision_score: 0,
+                                minion_kill: 0,
+                                turret_kill: 0,
+                                barrack_kill: 0
+                            }
+                        };
+                    }
+
+                    // Atualizar estatísticas do modo de jogo
+                    let gameStats = champions[championId].games[gameType];
+                    gameStats.total_games += 1;
+                    if (result === 1) {
+                        gameStats.total_wins += 1;
+                    } else {
+                        gameStats.total_losses += 1;
+                    }
+
+                    // Somar estatísticas do jogo ao acumulado
+                    gameStats.stats.kill += game.myData.stats.kill;
+                    gameStats.stats.death += game.myData.stats.death;
+                    gameStats.stats.assist += game.myData.stats.assist;
+                    gameStats.stats.gold_earned += game.myData.stats.gold_earned;
+                    gameStats.stats.total_damage_dealt_to_champions += game.myData.stats.total_damage_dealt_to_champions;
+                    gameStats.stats.total_damage_taken += game.myData.stats.total_damage_taken;
+                    gameStats.stats.vision_score += game.myData.stats.vision_score;
+                    gameStats.stats.minion_kill += game.myData.stats.minion_kill;
+                    gameStats.stats.turret_kill += game.myData.stats.turret_kill;
+                    gameStats.stats.barrack_kill += game.myData.stats.barrack_kill;
 
                     return {
                         id: game.id,
@@ -344,7 +410,9 @@ app.post("/accounts/games", async (req, res) => {
                         }
                     };
                 });
+
             allGames = [...allGames, ...processedGames];
+
             const lastGameDate = new Date(gamesData.meta.last_game_created_at);
             if (lastGameDate < TARGET_DATE) {
                 keepFetching = false;
@@ -352,6 +420,7 @@ app.post("/accounts/games", async (req, res) => {
                 url = `https://lol-web-api.op.gg/api/v1.0/internal/bypass/games/euw/summoners/${summonerId}?&ended_at=${encodeURIComponent(gamesData.meta.last_game_created_at)}&limit=20&hl=en_US`;
             }
         }
+
         allGames.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         accountData.games = {
             total_games: allGames.length,
@@ -361,6 +430,7 @@ app.post("/accounts/games", async (req, res) => {
             matches: allGames
         };
         accountData.champions = champions;
+
         fs.writeFileSync(filePath, JSON.stringify(accountData, null, 2));
         res.status(statusCode.OK).json({
             message: "Games retrieved and account updated successfully",

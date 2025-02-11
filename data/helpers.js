@@ -88,7 +88,6 @@ export const classes = {
 export function rarity(skin) {
   if (!rarities[skin.rarity]) return null;
   const [imgName, name] = rarities[skin.rarity];
-  console.log(imgName)
   const imgUrl = `${dataRoot()}/v1/rarity-gem-icons/${imgName}`;
   return [imgUrl, name];
 }

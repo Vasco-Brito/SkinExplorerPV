@@ -11,10 +11,10 @@
   },
   "games": {
     "total_games": 187,
-    "total_wins": 94,
+    "total_wins": 95,
     "total_losses": 93,
     "game_modes": {
-      "NORMAL": 117,
+      "NORMAL": 118,
       "ARAM": 19,
       "URF": 36,
       "FLEXRANKED": 3,
@@ -4703,547 +4703,2770 @@
       "wins": 2,
       "losses": 1,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 2,
+          "total_wins": 2,
+          "total_losses": 0,
+          "stats": {
+            "kill": 14,
+            "death": 11,
+            "assist": 17,
+            "gold_earned": 32348,
+            "total_damage_dealt_to_champions": 79755,
+            "total_damage_taken": 81419,
+            "vision_score": 23,
+            "minion_kill": 271,
+            "turret_kill": 3,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 100,
+          "total_wins": 300,
+          "total_losses": 400,
+          "stats": {
+            "kill": 500,
+            "death": 600,
+            "assist": 800,
+            "gold_earned": 12135,
+            "total_damage_dealt_to_champions": 19575,
+            "total_damage_taken": 24519,
+            "vision_score": 9,
+            "minion_kill": 42,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "7": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 4,
+            "death": 4,
+            "assist": 9,
+            "gold_earned": 9126,
+            "total_damage_dealt_to_champions": 13925,
+            "total_damage_taken": 21676,
+            "vision_score": 56,
+            "minion_kill": 43,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "11": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 4,
+            "death": 10,
+            "assist": 5,
+            "gold_earned": 17363,
+            "total_damage_dealt_to_champions": 34086,
+            "total_damage_taken": 42147,
+            "vision_score": 16,
+            "minion_kill": 113,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "12": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 1,
+            "death": 12,
+            "assist": 25,
+            "gold_earned": 12016,
+            "total_damage_dealt_to_champions": 32145,
+            "total_damage_taken": 67454,
+            "vision_score": 0,
+            "minion_kill": 9,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 4,
+            "assist": 2,
+            "gold_earned": 3921,
+            "total_damage_dealt_to_champions": 4140,
+            "total_damage_taken": 10590,
+            "vision_score": 14,
+            "minion_kill": 13,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "18": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 7,
+            "death": 6,
+            "assist": 13,
+            "gold_earned": 18106,
+            "total_damage_dealt_to_champions": 37185,
+            "total_damage_taken": 35602,
+            "vision_score": 21,
+            "minion_kill": 251,
+            "turret_kill": 5,
+            "barrack_kill": 3
+          }
+        }
+      }
     },
     "22": {
       "wins": 3,
       "losses": 2,
       "total_games": 5,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 4,
+          "total_wins": 2,
+          "total_losses": 2,
+          "stats": {
+            "kill": 9,
+            "death": 13,
+            "assist": 26,
+            "gold_earned": 33893,
+            "total_damage_dealt_to_champions": 37392,
+            "total_damage_taken": 45439,
+            "vision_score": 72,
+            "minion_kill": 170,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 11,
+            "death": 9,
+            "assist": 19,
+            "gold_earned": 13292,
+            "total_damage_dealt_to_champions": 19425,
+            "total_damage_taken": 16000,
+            "vision_score": 3,
+            "minion_kill": 45,
+            "turret_kill": 3,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "24": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 4,
+            "death": 6,
+            "assist": 5,
+            "gold_earned": 10987,
+            "total_damage_dealt_to_champions": 13278,
+            "total_damage_taken": 17131,
+            "vision_score": 14,
+            "minion_kill": 80,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 16,
+            "death": 4,
+            "assist": 5,
+            "gold_earned": 17693,
+            "total_damage_dealt_to_champions": 28585,
+            "total_damage_taken": 22929,
+            "vision_score": 11,
+            "minion_kill": 117,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "29": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 30,
+            "death": 15,
+            "assist": 22,
+            "gold_earned": 20766,
+            "total_damage_dealt_to_champions": 47294,
+            "total_damage_taken": 43732,
+            "vision_score": 0,
+            "minion_kill": 78,
+            "turret_kill": 3,
+            "barrack_kill": 2
+          }
+        }
+      }
     },
     "34": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 4,
+            "death": 6,
+            "assist": 24,
+            "gold_earned": 24256,
+            "total_damage_dealt_to_champions": 47993,
+            "total_damage_taken": 31928,
+            "vision_score": 27,
+            "minion_kill": 116,
+            "turret_kill": 2,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "40": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 6,
+            "assist": 10,
+            "gold_earned": 12286,
+            "total_damage_dealt_to_champions": 12343,
+            "total_damage_taken": 20633,
+            "vision_score": 27,
+            "minion_kill": 34,
+            "turret_kill": 0,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "42": {
-      "wins": 2,
+      "wins": 3,
       "losses": 0,
-      "total_games": 2,
-      "owned": null,
-      "skins": []
+      "total_games": 3,
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 2,
+          "total_losses": 0,
+          "stats": {
+            "kill": 34,
+            "death": 14,
+            "assist": 18,
+            "gold_earned": 33350,
+            "total_damage_dealt_to_champions": 88080,
+            "total_damage_taken": 53920,
+            "vision_score": 24,
+            "minion_kill": 414,
+            "turret_kill": 0,
+            "barrack_kill": 4
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 15,
+            "death": 6,
+            "assist": 5,
+            "gold_earned": 20910,
+            "total_damage_dealt_to_champions": 39957,
+            "total_damage_taken": 30727,
+            "vision_score": 18,
+            "minion_kill": 148,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "53": {
       "wins": 2,
       "losses": 3,
       "total_games": 5,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 8,
+            "death": 12,
+            "assist": 22,
+            "gold_earned": 11602,
+            "total_damage_dealt_to_champions": 24357,
+            "total_damage_taken": 51534,
+            "vision_score": 0,
+            "minion_kill": 16,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 2,
+          "total_losses": 1,
+          "stats": {
+            "kill": 10,
+            "death": 14,
+            "assist": 39,
+            "gold_earned": 43432,
+            "total_damage_dealt_to_champions": 39055,
+            "total_damage_taken": 74212,
+            "vision_score": 151,
+            "minion_kill": 83,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 6,
+            "death": 4,
+            "assist": 10,
+            "gold_earned": 16980,
+            "total_damage_dealt_to_champions": 37196,
+            "total_damage_taken": 36719,
+            "vision_score": 16,
+            "minion_kill": 107,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "57": {
       "wins": 1,
       "losses": 4,
       "total_games": 5,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "SOLORANKED": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 4,
+            "assist": 4,
+            "gold_earned": 8163,
+            "total_damage_dealt_to_champions": 15960,
+            "total_damage_taken": 44477,
+            "vision_score": 17,
+            "minion_kill": 142,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 15,
+            "death": 5,
+            "assist": 12,
+            "gold_earned": 19223,
+            "total_damage_dealt_to_champions": 34962,
+            "total_damage_taken": 51508,
+            "vision_score": 15,
+            "minion_kill": 115,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 1,
+          "total_losses": 2,
+          "stats": {
+            "kill": 10,
+            "death": 14,
+            "assist": 23,
+            "gold_earned": 23508,
+            "total_damage_dealt_to_champions": 39860,
+            "total_damage_taken": 68027,
+            "vision_score": 83,
+            "minion_kill": 95,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "58": {
       "wins": 3,
       "losses": 0,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 2,
+          "total_losses": 0,
+          "stats": {
+            "kill": 8,
+            "death": 4,
+            "assist": 6,
+            "gold_earned": 17356,
+            "total_damage_dealt_to_champions": 24244,
+            "total_damage_taken": 42476,
+            "vision_score": 24,
+            "minion_kill": 272,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 3,
+            "death": 1,
+            "assist": 3,
+            "gold_earned": 9878,
+            "total_damage_dealt_to_champions": 6251,
+            "total_damage_taken": 13335,
+            "vision_score": 6,
+            "minion_kill": 77,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "60": {
       "wins": 2,
       "losses": 1,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "SOLORANKED": {
+          "total_games": 2,
+          "total_wins": 2,
+          "total_losses": 0,
+          "stats": {
+            "kill": 13,
+            "death": 18,
+            "assist": 31,
+            "gold_earned": 27735,
+            "total_damage_dealt_to_champions": 46639,
+            "total_damage_taken": 85514,
+            "vision_score": 61,
+            "minion_kill": 21,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 10,
+            "death": 11,
+            "assist": 6,
+            "gold_earned": 13337,
+            "total_damage_dealt_to_champions": 38549,
+            "total_damage_taken": 34557,
+            "vision_score": 69,
+            "minion_kill": 38,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "61": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 7,
+            "death": 7,
+            "assist": 1,
+            "gold_earned": 14522,
+            "total_damage_dealt_to_champions": 19967,
+            "total_damage_taken": 21898,
+            "vision_score": 26,
+            "minion_kill": 77,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "62": {
       "wins": 7,
       "losses": 2,
       "total_games": 9,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 6,
+          "total_wins": 5,
+          "total_losses": 1,
+          "stats": {
+            "kill": 35,
+            "death": 15,
+            "assist": 33,
+            "gold_earned": 66987,
+            "total_damage_dealt_to_champions": 108852,
+            "total_damage_taken": 152830,
+            "vision_score": 89,
+            "minion_kill": 330,
+            "turret_kill": 9,
+            "barrack_kill": 3
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 14,
+            "death": 2,
+            "assist": 10,
+            "gold_earned": 19408,
+            "total_damage_dealt_to_champions": 47477,
+            "total_damage_taken": 45294,
+            "vision_score": 11,
+            "minion_kill": 120,
+            "turret_kill": 5,
+            "barrack_kill": 2
+          }
+        },
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 20,
+            "death": 9,
+            "assist": 25,
+            "gold_earned": 15845,
+            "total_damage_dealt_to_champions": 46181,
+            "total_damage_taken": 46969,
+            "vision_score": 0,
+            "minion_kill": 42,
+            "turret_kill": 1,
+            "barrack_kill": 1
+          }
+        },
+        "FLEXRANKED": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 12,
+            "death": 5,
+            "assist": 8,
+            "gold_earned": 17575,
+            "total_damage_dealt_to_champions": 32841,
+            "total_damage_taken": 49833,
+            "vision_score": 39,
+            "minion_kill": 56,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "63": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 19,
+            "death": 15,
+            "assist": 32,
+            "gold_earned": 16334,
+            "total_damage_dealt_to_champions": 68940,
+            "total_damage_taken": 39469,
+            "vision_score": 0,
+            "minion_kill": 74,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "77": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "SOLORANKED": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 2,
+            "death": 7,
+            "assist": 7,
+            "gold_earned": 10722,
+            "total_damage_dealt_to_champions": 8117,
+            "total_damage_taken": 33799,
+            "vision_score": 27,
+            "minion_kill": 9,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "79": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 4,
+            "assist": 0,
+            "gold_earned": 4788,
+            "total_damage_dealt_to_champions": 5961,
+            "total_damage_taken": 11427,
+            "vision_score": 4,
+            "minion_kill": 81,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "80": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 3,
+            "death": 5,
+            "assist": 1,
+            "gold_earned": 4833,
+            "total_damage_dealt_to_champions": 3331,
+            "total_damage_taken": 8548,
+            "vision_score": 22,
+            "minion_kill": 23,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "81": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 4,
+            "assist": 1,
+            "gold_earned": 8553,
+            "total_damage_dealt_to_champions": 10068,
+            "total_damage_taken": 10456,
+            "vision_score": 14,
+            "minion_kill": 172,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 13,
+            "death": 7,
+            "assist": 22,
+            "gold_earned": 16799,
+            "total_damage_dealt_to_champions": 53600,
+            "total_damage_taken": 26599,
+            "vision_score": 0,
+            "minion_kill": 122,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "84": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 6,
+            "assist": 5,
+            "gold_earned": 11446,
+            "total_damage_dealt_to_champions": 13742,
+            "total_damage_taken": 26378,
+            "vision_score": 13,
+            "minion_kill": 91,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 11,
+            "death": 3,
+            "assist": 4,
+            "gold_earned": 16830,
+            "total_damage_dealt_to_champions": 37240,
+            "total_damage_taken": 35538,
+            "vision_score": 8,
+            "minion_kill": 140,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "85": {
       "wins": 2,
       "losses": 2,
       "total_games": 4,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 4,
+          "total_wins": 2,
+          "total_losses": 2,
+          "stats": {
+            "kill": 30,
+            "death": 14,
+            "assist": 44,
+            "gold_earned": 57886,
+            "total_damage_dealt_to_champions": 99793,
+            "total_damage_taken": 93256,
+            "vision_score": 90,
+            "minion_kill": 362,
+            "turret_kill": 5,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "86": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 13,
+            "death": 11,
+            "assist": 7,
+            "gold_earned": 12050,
+            "total_damage_dealt_to_champions": 23999,
+            "total_damage_taken": 33873,
+            "vision_score": 0,
+            "minion_kill": 44,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "89": {
       "wins": 0,
       "losses": 3,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 0,
+          "total_losses": 2,
+          "stats": {
+            "kill": 3,
+            "death": 15,
+            "assist": 21,
+            "gold_earned": 24354,
+            "total_damage_dealt_to_champions": 37844,
+            "total_damage_taken": 84294,
+            "vision_score": 74,
+            "minion_kill": 75,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "FLEXRANKED": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 3,
+            "assist": 6,
+            "gold_earned": 6596,
+            "total_damage_dealt_to_champions": 6032,
+            "total_damage_taken": 17327,
+            "vision_score": 34,
+            "minion_kill": 28,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "98": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 3,
+            "death": 5,
+            "assist": 7,
+            "gold_earned": 7435,
+            "total_damage_dealt_to_champions": 13957,
+            "total_damage_taken": 33215,
+            "vision_score": 38,
+            "minion_kill": 33,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "103": {
       "wins": 2,
       "losses": 1,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 8,
+            "death": 3,
+            "assist": 4,
+            "gold_earned": 10900,
+            "total_damage_dealt_to_champions": 16218,
+            "total_damage_taken": 10456,
+            "vision_score": 4,
+            "minion_kill": 71,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 6,
+            "death": 10,
+            "assist": 17,
+            "gold_earned": 23114,
+            "total_damage_dealt_to_champions": 31392,
+            "total_damage_taken": 37852,
+            "vision_score": 19,
+            "minion_kill": 99,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "104": {
       "wins": 6,
       "losses": 2,
       "total_games": 8,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 5,
+          "total_wins": 3,
+          "total_losses": 2,
+          "stats": {
+            "kill": 31,
+            "death": 19,
+            "assist": 31,
+            "gold_earned": 57694,
+            "total_damage_dealt_to_champions": 89458,
+            "total_damage_taken": 111990,
+            "vision_score": 93,
+            "minion_kill": 107,
+            "turret_kill": 4,
+            "barrack_kill": 2
+          }
+        },
+        "SOLORANKED": {
+          "total_games": 3,
+          "total_wins": 3,
+          "total_losses": 0,
+          "stats": {
+            "kill": 30,
+            "death": 25,
+            "assist": 30,
+            "gold_earned": 46061,
+            "total_damage_dealt_to_champions": 72833,
+            "total_damage_taken": 114513,
+            "vision_score": 92,
+            "minion_kill": 96,
+            "turret_kill": 3,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "106": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 0,
+            "death": 0,
+            "assist": 0,
+            "gold_earned": 594,
+            "total_damage_dealt_to_champions": 0,
+            "total_damage_taken": 8,
+            "vision_score": 0,
+            "minion_kill": 2,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "107": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 3,
+            "assist": 2,
+            "gold_earned": 3752,
+            "total_damage_dealt_to_champions": 2312,
+            "total_damage_taken": 12196,
+            "vision_score": 5,
+            "minion_kill": 1,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "110": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 10,
+            "death": 4,
+            "assist": 11,
+            "gold_earned": 17177,
+            "total_damage_dealt_to_champions": 27798,
+            "total_damage_taken": 20446,
+            "vision_score": 21,
+            "minion_kill": 117,
+            "turret_kill": 5,
+            "barrack_kill": 2
+          }
+        }
+      }
     },
     "111": {
       "wins": 4,
       "losses": 2,
       "total_games": 6,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "FLEXRANKED": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 2,
+            "death": 2,
+            "assist": 3,
+            "gold_earned": 5177,
+            "total_damage_dealt_to_champions": 5894,
+            "total_damage_taken": 9990,
+            "vision_score": 20,
+            "minion_kill": 23,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 5,
+          "total_wins": 4,
+          "total_losses": 1,
+          "stats": {
+            "kill": 15,
+            "death": 14,
+            "assist": 60,
+            "gold_earned": 52806,
+            "total_damage_dealt_to_champions": 61952,
+            "total_damage_taken": 100565,
+            "vision_score": 78,
+            "minion_kill": 241,
+            "turret_kill": 2,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "113": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 0,
+            "death": 5,
+            "assist": 2,
+            "gold_earned": 6685,
+            "total_damage_dealt_to_champions": 7086,
+            "total_damage_taken": 18324,
+            "vision_score": 9,
+            "minion_kill": 23,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "117": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 12,
+            "death": 8,
+            "assist": 14,
+            "gold_earned": 29752,
+            "total_damage_dealt_to_champions": 35597,
+            "total_damage_taken": 51652,
+            "vision_score": 14,
+            "minion_kill": 184,
+            "turret_kill": 4,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "119": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 14,
+            "death": 12,
+            "assist": 15,
+            "gold_earned": 15075,
+            "total_damage_dealt_to_champions": 39790,
+            "total_damage_taken": 31044,
+            "vision_score": 0,
+            "minion_kill": 74,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "120": {
       "wins": 2,
       "losses": 0,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 9,
+            "death": 2,
+            "assist": 13,
+            "gold_earned": 16094,
+            "total_damage_dealt_to_champions": 22250,
+            "total_damage_taken": 49867,
+            "vision_score": 16,
+            "minion_kill": 38,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 13,
+            "death": 9,
+            "assist": 19,
+            "gold_earned": 15873,
+            "total_damage_dealt_to_champions": 35525,
+            "total_damage_taken": 40022,
+            "vision_score": 10,
+            "minion_kill": 59,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "121": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "SOLORANKED": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 6,
+            "assist": 6,
+            "gold_earned": 9711,
+            "total_damage_dealt_to_champions": 13375,
+            "total_damage_taken": 30424,
+            "vision_score": 17,
+            "minion_kill": 6,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "126": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 9,
+            "death": 3,
+            "assist": 18,
+            "gold_earned": 14508,
+            "total_damage_dealt_to_champions": 29252,
+            "total_damage_taken": 25884,
+            "vision_score": 10,
+            "minion_kill": 91,
+            "turret_kill": 3,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 0,
+            "death": 8,
+            "assist": 5,
+            "gold_earned": 8470,
+            "total_damage_dealt_to_champions": 14702,
+            "total_damage_taken": 17860,
+            "vision_score": 22,
+            "minion_kill": 59,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "127": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 4,
+            "death": 7,
+            "assist": 2,
+            "gold_earned": 9052,
+            "total_damage_dealt_to_champions": 12745,
+            "total_damage_taken": 19989,
+            "vision_score": 8,
+            "minion_kill": 62,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "145": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 10,
+            "assist": 30,
+            "gold_earned": 9659,
+            "total_damage_dealt_to_champions": 16218,
+            "total_damage_taken": 19941,
+            "vision_score": 0,
+            "minion_kill": 41,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "147": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 8,
+            "death": 7,
+            "assist": 6,
+            "gold_earned": 16034,
+            "total_damage_dealt_to_champions": 28502,
+            "total_damage_taken": 22904,
+            "vision_score": 21,
+            "minion_kill": 97,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 5,
+            "assist": 6,
+            "gold_earned": 5024,
+            "total_damage_dealt_to_champions": 9305,
+            "total_damage_taken": 13929,
+            "vision_score": 30,
+            "minion_kill": 11,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "150": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "SOLORANKED": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 3,
+            "death": 6,
+            "assist": 6,
+            "gold_earned": 12742,
+            "total_damage_dealt_to_champions": 17368,
+            "total_damage_taken": 22723,
+            "vision_score": 16,
+            "minion_kill": 205,
+            "turret_kill": 3,
+            "barrack_kill": 2
+          }
+        }
+      }
     },
     "157": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 15,
+            "death": 13,
+            "assist": 12,
+            "gold_earned": 14321,
+            "total_damage_dealt_to_champions": 26152,
+            "total_damage_taken": 38447,
+            "vision_score": 0,
+            "minion_kill": 48,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "163": {
       "wins": 1,
       "losses": 2,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 1,
+          "total_losses": 2,
+          "stats": {
+            "kill": 25,
+            "death": 10,
+            "assist": 15,
+            "gold_earned": 37177,
+            "total_damage_dealt_to_champions": 68277,
+            "total_damage_taken": 49597,
+            "vision_score": 54,
+            "minion_kill": 382,
+            "turret_kill": 6,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "164": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 2,
+            "death": 3,
+            "assist": 9,
+            "gold_earned": 10943,
+            "total_damage_dealt_to_champions": 19599,
+            "total_damage_taken": 35548,
+            "vision_score": 13,
+            "minion_kill": 173,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "166": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 18,
+            "death": 14,
+            "assist": 13,
+            "gold_earned": 28813,
+            "total_damage_dealt_to_champions": 49561,
+            "total_damage_taken": 48038,
+            "vision_score": 27,
+            "minion_kill": 198,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "201": {
       "wins": 1,
       "losses": 2,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 1,
+          "total_losses": 2,
+          "stats": {
+            "kill": 9,
+            "death": 6,
+            "assist": 25,
+            "gold_earned": 27479,
+            "total_damage_dealt_to_champions": 29751,
+            "total_damage_taken": 53121,
+            "vision_score": 58,
+            "minion_kill": 64,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "221": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 27,
+            "death": 12,
+            "assist": 15,
+            "gold_earned": 26614,
+            "total_damage_dealt_to_champions": 67332,
+            "total_damage_taken": 62151,
+            "vision_score": 31,
+            "minion_kill": 307,
+            "turret_kill": 4,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "222": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 11,
+            "death": 9,
+            "assist": 9,
+            "gold_earned": 20524,
+            "total_damage_dealt_to_champions": 47615,
+            "total_damage_taken": 44199,
+            "vision_score": 19,
+            "minion_kill": 107,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "223": {
       "wins": 2,
       "losses": 0,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 9,
+            "death": 10,
+            "assist": 21,
+            "gold_earned": 12088,
+            "total_damage_dealt_to_champions": 29105,
+            "total_damage_taken": 50836,
+            "vision_score": 0,
+            "minion_kill": 13,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 5,
+            "death": 4,
+            "assist": 7,
+            "gold_earned": 10153,
+            "total_damage_dealt_to_champions": 18067,
+            "total_damage_taken": 30486,
+            "vision_score": 7,
+            "minion_kill": 41,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "234": {
       "wins": 2,
       "losses": 5,
       "total_games": 7,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 2,
+          "total_losses": 1,
+          "stats": {
+            "kill": 18,
+            "death": 17,
+            "assist": 19,
+            "gold_earned": 30346,
+            "total_damage_dealt_to_champions": 54055,
+            "total_damage_taken": 76351,
+            "vision_score": 83,
+            "minion_kill": 101,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 2,
+          "total_wins": 0,
+          "total_losses": 2,
+          "stats": {
+            "kill": 24,
+            "death": 15,
+            "assist": 7,
+            "gold_earned": 31457,
+            "total_damage_dealt_to_champions": 52600,
+            "total_damage_taken": 68144,
+            "vision_score": 21,
+            "minion_kill": 147,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        },
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 31,
+            "death": 16,
+            "assist": 22,
+            "gold_earned": 20662,
+            "total_damage_dealt_to_champions": 68149,
+            "total_damage_taken": 70199,
+            "vision_score": 0,
+            "minion_kill": 78,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        },
+        "SOLORANKED": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 6,
+            "death": 9,
+            "assist": 6,
+            "gold_earned": 14915,
+            "total_damage_dealt_to_champions": 16487,
+            "total_damage_taken": 49459,
+            "vision_score": 39,
+            "minion_kill": 42,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "235": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 5,
+            "assist": 1,
+            "gold_earned": 8026,
+            "total_damage_dealt_to_champions": 7143,
+            "total_damage_taken": 12960,
+            "vision_score": 24,
+            "minion_kill": 43,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "236": {
       "wins": 2,
       "losses": 0,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 13,
+            "death": 7,
+            "assist": 12,
+            "gold_earned": 13384,
+            "total_damage_dealt_to_champions": 26597,
+            "total_damage_taken": 16747,
+            "vision_score": 0,
+            "minion_kill": 92,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 19,
+            "death": 6,
+            "assist": 11,
+            "gold_earned": 23066,
+            "total_damage_dealt_to_champions": 63932,
+            "total_damage_taken": 29172,
+            "vision_score": 17,
+            "minion_kill": 148,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "246": {
       "wins": 2,
       "losses": 0,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 17,
+            "death": 4,
+            "assist": 17,
+            "gold_earned": 19924,
+            "total_damage_dealt_to_champions": 44347,
+            "total_damage_taken": 42242,
+            "vision_score": 15,
+            "minion_kill": 126,
+            "turret_kill": 4,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 5,
+            "death": 1,
+            "assist": 4,
+            "gold_earned": 7450,
+            "total_damage_dealt_to_champions": 6478,
+            "total_damage_taken": 4649,
+            "vision_score": 8,
+            "minion_kill": 37,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "254": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 11,
+            "death": 13,
+            "assist": 19,
+            "gold_earned": 13493,
+            "total_damage_dealt_to_champions": 26808,
+            "total_damage_taken": 35288,
+            "vision_score": 0,
+            "minion_kill": 35,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 21,
+            "death": 1,
+            "assist": 10,
+            "gold_earned": 15724,
+            "total_damage_dealt_to_champions": 28842,
+            "total_damage_taken": 13270,
+            "vision_score": 12,
+            "minion_kill": 42,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "266": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 37,
+            "death": 21,
+            "assist": 41,
+            "gold_earned": 30763,
+            "total_damage_dealt_to_champions": 122411,
+            "total_damage_taken": 114450,
+            "vision_score": 0,
+            "minion_kill": 90,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "267": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 2,
+            "death": 9,
+            "assist": 17,
+            "gold_earned": 20652,
+            "total_damage_dealt_to_champions": 19158,
+            "total_damage_taken": 31932,
+            "vision_score": 62,
+            "minion_kill": 46,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "268": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 8,
+            "assist": 6,
+            "gold_earned": 12846,
+            "total_damage_dealt_to_champions": 22719,
+            "total_damage_taken": 25082,
+            "vision_score": 12,
+            "minion_kill": 177,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "432": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 3,
+            "assist": 8,
+            "gold_earned": 15798,
+            "total_damage_dealt_to_champions": 13399,
+            "total_damage_taken": 31201,
+            "vision_score": 43,
+            "minion_kill": 39,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "498": {
       "wins": 2,
       "losses": 2,
       "total_games": 4,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 3,
+          "total_wins": 1,
+          "total_losses": 2,
+          "stats": {
+            "kill": 30,
+            "death": 24,
+            "assist": 20,
+            "gold_earned": 42801,
+            "total_damage_dealt_to_champions": 81965,
+            "total_damage_taken": 66955,
+            "vision_score": 31,
+            "minion_kill": 303,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        },
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 10,
+            "death": 3,
+            "assist": 18,
+            "gold_earned": 7723,
+            "total_damage_dealt_to_champions": 16832,
+            "total_damage_taken": 7355,
+            "vision_score": 0,
+            "minion_kill": 32,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "516": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 0,
+            "death": 3,
+            "assist": 1,
+            "gold_earned": 6674,
+            "total_damage_dealt_to_champions": 3656,
+            "total_damage_taken": 16686,
+            "vision_score": 15,
+            "minion_kill": 28,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "517": {
       "wins": 1,
       "losses": 3,
       "total_games": 4,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 10,
+            "death": 12,
+            "assist": 23,
+            "gold_earned": 15158,
+            "total_damage_dealt_to_champions": 34630,
+            "total_damage_taken": 49456,
+            "vision_score": 0,
+            "minion_kill": 24,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 1,
+          "total_losses": 2,
+          "stats": {
+            "kill": 13,
+            "death": 24,
+            "assist": 30,
+            "gold_earned": 31140,
+            "total_damage_dealt_to_champions": 55531,
+            "total_damage_taken": 93474,
+            "vision_score": 83,
+            "minion_kill": 104,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "518": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 9,
+            "death": 6,
+            "assist": 4,
+            "gold_earned": 15048,
+            "total_damage_dealt_to_champions": 28444,
+            "total_damage_taken": 16175,
+            "vision_score": 18,
+            "minion_kill": 101,
+            "turret_kill": 4,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "526": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 9,
+            "death": 3,
+            "assist": 19,
+            "gold_earned": 13950,
+            "total_damage_dealt_to_champions": 28347,
+            "total_damage_taken": 25863,
+            "vision_score": 4,
+            "minion_kill": 30,
+            "turret_kill": 2,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "555": {
       "wins": 0,
       "losses": 2,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 7,
+            "death": 3,
+            "assist": 1,
+            "gold_earned": 7523,
+            "total_damage_dealt_to_champions": 8558,
+            "total_damage_taken": 9991,
+            "vision_score": 2,
+            "minion_kill": 45,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 5,
+            "death": 5,
+            "assist": 2,
+            "gold_earned": 11074,
+            "total_damage_dealt_to_champions": 8451,
+            "total_damage_taken": 15030,
+            "vision_score": 23,
+            "minion_kill": 27,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "711": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 3,
+            "death": 10,
+            "assist": 6,
+            "gold_earned": 10298,
+            "total_damage_dealt_to_champions": 23540,
+            "total_damage_taken": 20217,
+            "vision_score": 11,
+            "minion_kill": 62,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "777": {
       "wins": 5,
       "losses": 1,
       "total_games": 6,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 4,
+          "total_wins": 3,
+          "total_losses": 1,
+          "stats": {
+            "kill": 21,
+            "death": 19,
+            "assist": 18,
+            "gold_earned": 53623,
+            "total_damage_dealt_to_champions": 106510,
+            "total_damage_taken": 96718,
+            "vision_score": 54,
+            "minion_kill": 595,
+            "turret_kill": 6,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 2,
+          "total_wins": 2,
+          "total_losses": 0,
+          "stats": {
+            "kill": 34,
+            "death": 8,
+            "assist": 15,
+            "gold_earned": 30264,
+            "total_damage_dealt_to_champions": 77177,
+            "total_damage_taken": 57533,
+            "vision_score": 2,
+            "minion_kill": 173,
+            "turret_kill": 4,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "799": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 4,
+            "death": 6,
+            "assist": 2,
+            "gold_earned": 7660,
+            "total_damage_dealt_to_champions": 12834,
+            "total_damage_taken": 18940,
+            "vision_score": 11,
+            "minion_kill": 140,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 8,
+            "death": 6,
+            "assist": 2,
+            "gold_earned": 17170,
+            "total_damage_dealt_to_champions": 24071,
+            "total_damage_taken": 31307,
+            "vision_score": 17,
+            "minion_kill": 126,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "800": {
       "wins": 1,
       "losses": 4,
       "total_games": 5,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 5,
+          "total_wins": 1,
+          "total_losses": 4,
+          "stats": {
+            "kill": 58,
+            "death": 29,
+            "assist": 22,
+            "gold_earned": 73965,
+            "total_damage_dealt_to_champions": 155609,
+            "total_damage_taken": 99438,
+            "vision_score": 111,
+            "minion_kill": 428,
+            "turret_kill": 3,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "875": {
       "wins": 3,
       "losses": 0,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 3,
+          "total_wins": 3,
+          "total_losses": 0,
+          "stats": {
+            "kill": 21,
+            "death": 9,
+            "assist": 14,
+            "gold_earned": 34159,
+            "total_damage_dealt_to_champions": 68392,
+            "total_damage_taken": 88633,
+            "vision_score": 40,
+            "minion_kill": 450,
+            "turret_kill": 11,
+            "barrack_kill": 2
+          }
+        }
+      }
     },
     "887": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 8,
+            "death": 1,
+            "assist": 6,
+            "gold_earned": 14049,
+            "total_damage_dealt_to_champions": 17361,
+            "total_damage_taken": 18907,
+            "vision_score": 15,
+            "minion_kill": 110,
+            "turret_kill": 2,
+            "barrack_kill": 1
+          }
+        }
+      }
     },
     "888": {
       "wins": 1,
       "losses": 0,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 1,
+            "death": 3,
+            "assist": 7,
+            "gold_earned": 9537,
+            "total_damage_dealt_to_champions": 7684,
+            "total_damage_taken": 13411,
+            "vision_score": 36,
+            "minion_kill": 40,
+            "turret_kill": 1,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "893": {
       "wins": 0,
       "losses": 1,
       "total_games": 1,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 4,
+            "death": 10,
+            "assist": 4,
+            "gold_earned": 6900,
+            "total_damage_dealt_to_champions": 13371,
+            "total_damage_taken": 16405,
+            "vision_score": 9,
+            "minion_kill": 48,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "897": {
       "wins": 6,
       "losses": 10,
       "total_games": 16,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 13,
+          "total_wins": 5,
+          "total_losses": 8,
+          "stats": {
+            "kill": 64,
+            "death": 43,
+            "assist": 48,
+            "gold_earned": 130182,
+            "total_damage_dealt_to_champions": 254300,
+            "total_damage_taken": 382671,
+            "vision_score": 153,
+            "minion_kill": 1409,
+            "turret_kill": 19,
+            "barrack_kill": 3
+          }
+        },
+        "SOLORANKED": {
+          "total_games": 2,
+          "total_wins": 0,
+          "total_losses": 2,
+          "stats": {
+            "kill": 13,
+            "death": 12,
+            "assist": 16,
+            "gold_earned": 28129,
+            "total_damage_dealt_to_champions": 49000,
+            "total_damage_taken": 96280,
+            "vision_score": 42,
+            "minion_kill": 381,
+            "turret_kill": 4,
+            "barrack_kill": 0
+          }
+        },
+        "URF": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 16,
+            "death": 2,
+            "assist": 2,
+            "gold_earned": 13578,
+            "total_damage_dealt_to_champions": 22281,
+            "total_damage_taken": 26316,
+            "vision_score": 11,
+            "minion_kill": 82,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "901": {
       "wins": 1,
       "losses": 1,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 12,
+            "death": 15,
+            "assist": 4,
+            "gold_earned": 25577,
+            "total_damage_dealt_to_champions": 46524,
+            "total_damage_taken": 50352,
+            "vision_score": 22,
+            "minion_kill": 344,
+            "turret_kill": 2,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "902": {
       "wins": 2,
       "losses": 1,
       "total_games": 3,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "ARAM": {
+          "total_games": 1,
+          "total_wins": 1,
+          "total_losses": 0,
+          "stats": {
+            "kill": 7,
+            "death": 9,
+            "assist": 50,
+            "gold_earned": 16625,
+            "total_damage_dealt_to_champions": 17176,
+            "total_damage_taken": 38007,
+            "vision_score": 0,
+            "minion_kill": 20,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 2,
+          "total_wins": 1,
+          "total_losses": 1,
+          "stats": {
+            "kill": 1,
+            "death": 4,
+            "assist": 12,
+            "gold_earned": 14419,
+            "total_damage_dealt_to_champions": 22842,
+            "total_damage_taken": 26701,
+            "vision_score": 44,
+            "minion_kill": 56,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        }
+      }
     },
     "910": {
       "wins": 0,
       "losses": 2,
       "total_games": 2,
-      "owned": null,
-      "skins": []
+      "owned": false,
+      "skins": [],
+      "stats": {},
+      "games": {
+        "URF": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 3,
+            "death": 10,
+            "assist": 3,
+            "gold_earned": 11494,
+            "total_damage_dealt_to_champions": 14620,
+            "total_damage_taken": 18462,
+            "vision_score": 13,
+            "minion_kill": 88,
+            "turret_kill": 0,
+            "barrack_kill": 0
+          }
+        },
+        "NORMAL": {
+          "total_games": 1,
+          "total_wins": 0,
+          "total_losses": 1,
+          "stats": {
+            "kill": 12,
+            "death": 10,
+            "assist": 7,
+            "gold_earned": 16991,
+            "total_damage_dealt_to_champions": 65440,
+            "total_damage_taken": 39308,
+            "vision_score": 27,
+            "minion_kill": 188,
+            "turret_kill": 3,
+            "barrack_kill": 0
+          }
+        }
+      }
     }
   }
 }

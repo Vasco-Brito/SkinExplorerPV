@@ -43,6 +43,7 @@ export const Header = ({ flat, backTo }) => {
 
         localStorage.setItem("account", JSON.stringify(data));
         setIsLoggedIn(true);
+        window.location.reload();
       } catch (error) {
         console.log(error);
       }
@@ -54,6 +55,7 @@ export const Header = ({ flat, backTo }) => {
     setIsLoggedIn(false);
     setUsername("");
     setPassword("");
+    window.location.reload();
   };
 
   useEffect(() => {
