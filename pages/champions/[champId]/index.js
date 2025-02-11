@@ -46,36 +46,65 @@ function _Page() {
           <div>
             <div className={styles.background}>
               <Image
-                unoptimized
-                layout="fill"
-                objectFit="cover"
-                src={asset(base.uncenteredSplashPath)}
-                alt={champion.name}
+                  unoptimized
+                  layout="fill"
+                  objectFit="cover"
+                  src={asset(base.uncenteredSplashPath)}
+                  alt={champion.name}
               />
             </div>
-            <Header backTo="/" flat />
-            <main>
-              <h1 className={styles.title}>{champion.name}</h1>
-              <div className={styles.controls}>
-                <label>
-                  <span>Sort By</span>
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                  >
-                    <option value="release">Release</option>
-                    <option value="rarity">Rarity</option>
-                  </select>
-                </label>
+            <Header backTo="/" flat/>
+            <main className={styles.mainContainer}>
+              <div className={styles.topSection}>
+                <div className={styles.infoSection}>
+                  <h1 className={styles.title}>{champion.name}</h1>
+                  <div className={styles.controls}>
+                    <label>
+                      <span>Sort By</span>
+                      <select
+                          value={sortBy}
+                          onChange={(e) => setSortBy(e.target.value)}
+                      >
+                        <option value="release">Release</option>
+                        <option value="rarity">Rarity</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+
+                <div className={styles.championStats}>
+                  <table>
+                    <thead>
+                    <tr>
+                      <th>Stat</th>
+                      <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Release Date</td>
+                      <td>{champion.releaseDate ?? "Unknown"}</td>
+                    </tr>
+                    <tr>
+                      <td>Role</td>
+                      <td>{champion.role ?? "Unknown"}</td>
+                    </tr>
+                    <tr>
+                      <td>Difficulty</td>
+                      <td>{champion.difficulty ?? "N/A"}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <SkinGrid
-                skins={sortedSkins}
-                linkTo={linkTo}
-                viewerPage="/champions/[key]/skins/[id]"
+                  skins={sortedSkins}
+                  linkTo={linkTo}
+                  viewerPage="/champions/[key]/skins/[id]"
               />
             </main>
           </div>
-          <Footer flat />
+          <Footer flat/>
         </FooterContainer>
       </div>
     </>
@@ -84,16 +113,16 @@ function _Page() {
 
 export default function Page() {
   return (
-    <Fallback>
-      <_Page />
-    </Fallback>
+      <Fallback>
+        <_Page/>
+      </Fallback>
   );
 }
 
 export async function getStaticProps(ctx) {
-  const { champId } = ctx.params;
+  const {champId} = ctx.params;
 
-  const { champions, skins: allSkins } = store.patch;
+  const {champions, skins: allSkins} = store.patch;
 
   const champion = champions.find((c) => c.key === champId);
   if (!champion) {
@@ -116,8 +145,8 @@ export async function getStaticProps(ctx) {
 export async function getStaticPaths() {
   let paths = [];
   if (process.env.NODE_ENV === "production") {
-    const { champions } = store.patch;
-    paths = champions.map((c) => ({ params: { champId: c.key.toString() } }));
+    const {champions} = store.patch;
+    paths = champions.map((c) => ({params: {champId: c.key.toString()}}));
   }
 
   return {

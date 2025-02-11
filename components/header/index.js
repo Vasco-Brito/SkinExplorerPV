@@ -18,8 +18,8 @@ export const Header = ({ flat, backTo }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [storedUser, setStoredUser] = useState(null);
   const omnisearch = useRef();
-  let storedUser = {};
   (typeof window === "undefined" ? useEffect : useLayoutEffect)(() => {
     if (showSearch) omnisearch.current?.focus();
   }, [showSearch]);
@@ -57,9 +57,9 @@ export const Header = ({ flat, backTo }) => {
   };
 
   useEffect(() => {
-    storedUser = JSON.parse(localStorage.getItem("account") || {});
-    console.log(storedUser.account.user);
-    if (storedUser) {
+    const accountData = localStorage.getItem("account");
+    if (accountData) {
+      setStoredUser(JSON.parse(accountData));
       setIsLoggedIn(true);
     }
   }, []);
@@ -136,7 +136,7 @@ export const Header = ({ flat, backTo }) => {
             ) : (
                 <>
                   <li className={styles.loggedUser}>
-                    <a>Bem-vindo, <strong>{storedUser.account?.user}</strong>!</a>
+                    <a>Bem-vindo, <strong>{storedUser?.account?.user}</strong>!</a>
                   </li>
                   <li>
                     <button onClick={handleLogout} className={styles.loginBtn}>
