@@ -26,7 +26,7 @@ function _Page() {
     "release"
   );
   const [accountData, setAccountData] = useState(null);
-  const [selectedMatchTypes, setSelectedMatchTypes] = useState([]);
+  const [selectedMatchTypes, setSelectedMatchTypes] = useState(["NORMAL"]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [totalObj, setTotalObj] = useState({
     wins: 0,
@@ -49,28 +49,43 @@ function _Page() {
 
   useEffect(() => {
     if (accountData) {
-      setTotalObj({
-        wins: accountData?.champions[champion.id]?.games?.NORMAL?.total_wins || 0,
-        defeats: accountData?.champions[champion.id]?.games?.NORMAL?.total_losses || 0,
-        gold: accountData?.champions[champion.id]?.games?.NORMAL?.stats.gold_earned || 0,
-        dmgGiven: accountData?.champions[champion.id]?.games?.NORMAL?.stats.total_damage_dealt_to_champions || 0,
-        dmgDealt: accountData?.champions[champion.id]?.games?.NORMAL?.stats.total_damage_taken || 0,
-        kill: accountData?.champions[champion.id]?.games?.NORMAL?.stats.kill || 0,
-        death: accountData?.champions[champion.id]?.games?.NORMAL?.stats.death || 0,
-        assist: accountData?.champions[champion.id]?.games?.NORMAL?.stats.assist || 0,
+      let updatedTotals = {
+        wins: 0,
+        defeats: 0,
+        gold: 0,
+        dmgGiven: 0,
+        dmgDealt: 0,
+        kill: 0,
+        death: 0,
+        assist: 0,
+      };
+
+      selectedMatchTypes.forEach((type) => {
+        updatedTotals.wins += accountData?.champions[champion.id]?.games?.[type]?.total_wins || 0;
+        updatedTotals.defeats += accountData?.champions[champion.id]?.games?.[type]?.total_losses || 0;
+        updatedTotals.gold += accountData?.champions[champion.id]?.games?.[type]?.stats.gold_earned || 0;
+        updatedTotals.dmgGiven += accountData?.champions[champion.id]?.games?.[type]?.stats.total_damage_dealt_to_champions || 0;
+        updatedTotals.dmgDealt += accountData?.champions[champion.id]?.games?.[type]?.stats.total_damage_taken || 0;
+        updatedTotals.kill += accountData?.champions[champion.id]?.games?.[type]?.stats.kill || 0;
+        updatedTotals.death += accountData?.champions[champion.id]?.games?.[type]?.stats.death || 0;
+        updatedTotals.assist += accountData?.champions[champion.id]?.games?.[type]?.stats.assist || 0;
       });
+
+      setTotalObj(updatedTotals);
     }
-  }, [accountData, champion.id]);
-
-
+  }, [accountData, champion.id, selectedMatchTypes]);
 
   const toggleMatchType = (type) => {
-    setSelectedMatchTypes((prev) =>
-        prev.includes(type)
-            ? prev.filter((t) => t !== type) // Remover se já estiver selecionado
-            : [...prev, type] // Adicionar se não estiver
-    );
+    setSelectedMatchTypes((prev) => {
+      if (prev.includes(type)) {
+        if (prev.length === 1) return prev;
+        return prev.filter((t) => t !== type);
+      } else {
+        return [...prev, type];
+      }
+    });
   };
+
 
   const base = useMemo(() => skins.find((s) => s.isBase), [skins]);
 
@@ -111,7 +126,7 @@ function _Page() {
                 <div className={styles.infoSection}>
                   <h1 className={styles.title}>{champion.name}</h1>
                   <div className={styles.controls}>
-                    {/* SORT BY */}
+
                     <div className={styles.controlGroup}>
                       <label className={styles.controlLabel}>Sort By</label>
                       <select
@@ -122,6 +137,26 @@ function _Page() {
                         <option value="rarity">Rarity</option>
                       </select>
                     </div>
+
+                    <div className={styles.controlGroup}>
+                      <label className={styles.controlLabel} style={{marginLeft: 10}}>Match Type</label>
+                      <div className={styles.matchTypeSelector} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                        <span>{selectedText}</span>
+                        <span className={styles.arrow}>{isDropdownOpen ? "▲" : "▼"}</span>
+                      </div>
+
+                      {isDropdownOpen && (
+                          <ul className={styles.matchTypeDropdown}>
+                            {matchTypes.map((type) => (
+                                <li key={type} onClick={() => toggleMatchType(type)}>
+                                  <input type="checkbox" checked={selectedMatchTypes.includes(type)} readOnly />
+                                  {type}
+                                </li>
+                            ))}
+                          </ul>
+                      )}
+                    </div>
+
                   </div>
                 </div>
 
