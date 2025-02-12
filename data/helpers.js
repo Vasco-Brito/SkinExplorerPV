@@ -1,8 +1,8 @@
-import { CDRAGON, ROOT } from "./constants";
-import { useProps } from "./contexts";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { useSwipeable } from "react-swipeable";
+import {CDRAGON, ROOT} from "./constants";
+import {useProps} from "./contexts";
+import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
+import {useSwipeable} from "react-swipeable";
 
 function isTextBox(element) {
   if (!element) return false;
@@ -67,13 +67,18 @@ export function useSkinlineSkins(id) {
   return skinlineSkins(id, skins, champions);
 }
 
-export const rarities = { //TODO: Adicionar as imagens aos ranks
+export const rarities = {
   kTranscendent: ["transcendent.png", "Transcendent"],
   kExalted: ["exalted.png", "Exalted"],
   kUltimate: ["ultimate.png", "Ultimate"],
   kMythic: ["mythic.png", "Mythic"],
   kLegendary: ["legendary.png", "Legendary"],
   kEpic: ["epic.png", "Epic"],
+};
+
+export function chromas(skin) {
+    if (skin.chromaCount === 0) return null;
+    return "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/skin-viewer/icon-chroma-default.png";
 };
 
 export const classes = {
@@ -89,6 +94,7 @@ export function rarity(skin) {
   if (!rarities[skin.rarity]) return null;
   const [imgName, name] = rarities[skin.rarity];
   const imgUrl = `${dataRoot()}/v1/rarity-gem-icons/${imgName}`;
+  console.log(imgUrl)
   return [imgUrl, name];
 }
 

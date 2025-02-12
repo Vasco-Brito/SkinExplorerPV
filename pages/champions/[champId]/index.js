@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import { useProps } from "../../../data/contexts";
+import Tooltip from '@mui/material/Tooltip';
 import {
   championSkins,
   useLocalStorageState,
@@ -37,6 +38,7 @@ function _Page() {
     kill: 0,
     death: 0,
     assist: 0,
+    kda: 0.00
   });
 
 
@@ -58,6 +60,7 @@ function _Page() {
         kill: 0,
         death: 0,
         assist: 0,
+        kda: 0.00
       };
 
       selectedMatchTypes.forEach((type) => {
@@ -69,6 +72,7 @@ function _Page() {
         updatedTotals.kill += accountData?.champions[champion.id]?.games?.[type]?.stats.kill || 0;
         updatedTotals.death += accountData?.champions[champion.id]?.games?.[type]?.stats.death || 0;
         updatedTotals.assist += accountData?.champions[champion.id]?.games?.[type]?.stats.assist || 0;
+        updatedTotals.kda = (updatedTotals.kill + updatedTotals.assist) / updatedTotals.death
       });
 
       setTotalObj(updatedTotals);
@@ -103,7 +107,7 @@ function _Page() {
         {makeTitle(champion.name)}
         {makeDescription(
           `Browse through the ${skins.length} skin${
-            skins.length == 1 ? "" : "s"
+            skins.length === 1 ? "" : "s"
           } that ${champion.name} has!`
         )}
         {makeImage(asset(base.uncenteredSplashPath), champion.name)}
@@ -198,7 +202,15 @@ function _Page() {
                         </tr>
                         <tr>
                           <td><b>KDA</b></td>
-                          <td>{totalObj.kill + " / " + totalObj.death + " / " + totalObj.assist ?? "N/A"}</td>
+                          <td>
+                            <Tooltip title={
+                              <span style={{fontSize: "16px", fontWeight: "bold"}}>
+                                KDA: {totalObj.kda.toFixed(2)}
+                              </span>
+                            }>
+                              <span>{totalObj.kill + " / " + totalObj.death + " / " + totalObj.assist ?? "N/A"}</span>
+                            </Tooltip>
+                          </td>
                         </tr>
                         </tbody>
                       </table>
@@ -208,6 +220,7 @@ function _Page() {
               <SkinGrid
                   skins={sortedSkins}
                   linkTo={linkTo}
+                  champion={champion}
                   viewerPage="/champions/[key]/skins/[id]"
               />
             </main>
